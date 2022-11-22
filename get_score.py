@@ -36,9 +36,7 @@ def get_score_and_eligibility(number):
         response = {
             "eligible": False,
             "data": {
-                "number": number,
-                "credit_score": credit_score,
-                "eligible_loan": eligible_loan,
+                "message":f"The user {number} does not exist in the database"
             },
         }
 
