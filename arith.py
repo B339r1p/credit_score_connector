@@ -218,4 +218,3 @@ def map_eligibility(final_df):
     final_df.to_csv('Final_DF.csv', index = False)
     
     return final_df
-

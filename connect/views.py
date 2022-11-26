@@ -12,7 +12,6 @@ class EligibilityChecksAPIView(APIView):
         phone_number = serializer.validated_data["phone_number"]
 
         score_and_eligibility = get_score_and_eligibility(phone_number)
-        # print(score_and_eligibility, ":::::::::::::::::")
         eligible = score_and_eligibility.get("eligible")
 
         if eligible is True:
@@ -21,6 +20,6 @@ class EligibilityChecksAPIView(APIView):
             return Response(score_and_eligibility, status=status.HTTP_400_BAD_REQUEST)
 
 
-# class CheckCreditScoreAPIView(APIView):
-#     def post(self, request, format=None):
-#         phone_number = request.query_params.post("phone_number")
+class QueryTanadiDatabaseAPIView(APIView):
+    def get(self, request, format=None):
+        phone_number = request.query_params.post("phone_number")
