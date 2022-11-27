@@ -1,7 +1,7 @@
 # read in dataframe using zip files and concat
 import sys
 import pandas as pd
-from helper import check_tanadi_database
+# from helper import check_tanadi_database
 # from scorecard import score_card
 
 
@@ -61,7 +61,7 @@ from helper import check_tanadi_database
 
 def get_score_and_eligibility(number):
           
-        print(number)
+        # print(type(number))
         """
         Input:
             number: Phone number of user
@@ -85,7 +85,7 @@ def get_score_and_eligibility(number):
             return 'The user {} has a credit score of {} and is eligible for {}'.format(number, score, eligible_loan)"""
 
         df = pd.read_csv("FDS.csv")  # dummy dataset with variables
-        df["Pri_identity"] = df["Pri_identity"].astype()
+        df["Pri_identity"] = df["Pri_identity"].astype(str)
 
         if number not in df["Pri_identity"].unique().tolist():
             credit_score, eligible_loan = 0, 0
@@ -130,7 +130,3 @@ def get_score_and_eligibility(number):
 
             # return 'The user {} has a credit score of {} and is eligible for {}'.format(number, credit_score, eligible_loan)
 
-
-    # print(get_score_and_eligibility(int(sys.argv[1])))
-
-    # return get_score_and_eligibility

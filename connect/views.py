@@ -20,6 +20,6 @@ class EligibilityChecksAPIView(APIView):
             return Response(score_and_eligibility, status=status.HTTP_400_BAD_REQUEST)
 
 
-class QueryTanadiDatabaseAPIView(APIView):
-    def get(self, request, format=None):
-        phone_number = request.query_params.post("phone_number")
+# class QueryTanadiDatabaseAPIView(APIView):
+#     def get(self, request, format=None):
+#         phone_number = request.query_params.post("phone_number")
